@@ -22,3 +22,13 @@ else
 		return minetest.setting_getbool("creative_mode")
 	end
 end
+
+if minetest.global_exists("sethome") then
+	function unified_inventory.set_home(player, pos)
+		sethome.set(player:get_player_name(), pos)
+	end
+
+	function unified_inventory.go_home(player)
+		sethome.go(player:get_player_name())
+	end
+end
