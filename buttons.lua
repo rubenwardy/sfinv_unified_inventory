@@ -13,7 +13,7 @@ if minetest.global_exists("sethome") then
 		hide_lite=true,
 		action = function(player)
 			minetest.sound_play("dingdong",
-					{to_player=player_name, gain = 1.0})
+					{to_player=player:get_player_name(), gain = 1.0})
 			sethome.set(player:get_player_name(), player:getpos())
 		end,
 	})
